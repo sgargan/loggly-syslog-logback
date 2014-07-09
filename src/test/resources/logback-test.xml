@@ -1,0 +1,24 @@
+<configuration>
+
+    <contextName>Game-Server</contextName>
+
+    <appender name="LOGGLY" class="com.github.sgargan.logging.LogglySyslogAppender">
+        <syslogHost>logs-01.loggly.com</syslogHost>
+        <tags>appId,dev</tags>
+        <apiToken>your-loggly-api-key</apiToken>
+        <appName>appId</appName>
+        <port>514</port>
+        <facility>LOCAL6</facility>
+    </appender>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date{ISO8601} %-5level %logger{80} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="DEBUG">
+        <appender-ref ref="LOGGLY"/>
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
