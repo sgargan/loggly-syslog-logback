@@ -34,4 +34,4 @@ The following xml snippet will configure the appender, just add it to your logba
 
 Licence
 ============
-Eclipse Public License v1.0
+Uses the same dual licencing as Logback. See LICENCE.txt
